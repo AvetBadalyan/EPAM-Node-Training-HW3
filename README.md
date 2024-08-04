@@ -1,89 +1,70 @@
-# Node.js Streams Homework
+# Node.js Stream Tasks
 
-## Overview
+## 1. Basic Stream Operations
 
-This repository contains solutions for four homework tasks related to Node.js streams. Each task demonstrates different aspects of working with streams in Node.js, including basic stream operations, transform streams, back pressure, and HTTP streaming.
+### Description
 
-## Tasks
+Write a simple Node.js script using the `fs` module to read a text file and write it to another text file using streams. Implement this with and without using pipes.
 
-### 1. Basic Stream Operations
+### Files
 
-**Description:**  
-This script demonstrates basic stream operations by reading a text file and writing its contents to another file using Node.js streams. Two versions are provided: one using event listeners and another using the `pipe` method.
+- `task1.js` (without pipes)
+- `task1-pipe.js` (with pipes)
 
-**Files:**
+### Commands
 
-- `basicStreamOperations.js`
+#### Without Pipes:
 
-**Commands:**
-
-- **Without Pipes:**
-
-  ```bash
-  node basicStreamOperations.js
-  This will use event listeners to read from input.txt and write to output.txt.
-  ```
-
+```bash
+node task1.js
+# This will use event listeners to read from input.txt and write to output.txt.
 With Pipes:
 
-bash
-Copy code
-node basicStreamOperations.js
-This will use the pipe method to achieve the same result.
+node task1-pipe.js
+# This will use the pipe method to achieve the same result.
 
-2. Transform Streams
-   Description:
-   This script creates a transform stream to process JSON objects. It adds a timestamp property to each JSON object and writes the modified objects to an output file.
+```
 
-Files:
+## 2. Transform Streams
 
-transformStreams.js
-Commands:
+### Description
 
-bash
-Copy code
-node transformStreams.js
-Ensure you have input.json in the same directory. This script reads from input.json, processes the data, and writes the output to output.json.
+This script creates a transform stream to process JSON objects. It adds a timestamp property to each JSON object and writes the modified objects to an output file.
 
-3. Implementing Basic Back Pressure
-   Description:
-   This script demonstrates back pressure in streams by creating a writable stream that writes data slower than it is read from a readable stream.
+Files
+task2.js
+Commands
 
-Files:
+node task2.js
 
-backPressure.js
-Commands:
+# This will read from input.json, add a timestamp to each JSON object, and write the result to output.json.
 
-bash
-Copy code
-node backPressure.js
-This will create a readable stream from an array of strings and a writable stream that simulates slow writing.
+## 3. Implementing Basic Back Pressure
 
-4. HTTP Streaming
-   Description:
-   This script sets up an HTTP server that streams a large file to the client upon request. It demonstrates how to handle large files efficiently by streaming them instead of loading them into memory all at once.
+### Description
 
-Files:
+Implement a readable and a writable stream where the writable stream deliberately writes data slower than the readable reads it, demonstrating how back pressure is managed.
 
-httpStreaming.js
-Commands:
+Files
+task3.js
+Commands
 
-bash
-Copy code
-node httpStreaming.js
-Open your browser and navigate to http://localhost:3000. Ensure you have largeFile.txt in the same directory. The server will stream the file to the client.
+node task3.js
 
-Setup
-Clone the repository:
+# This will demonstrate back pressure management by writing data slower than it is read.
 
-bash
-Copy code
-git clone <repository-url>
-cd <repository-directory>
-Ensure you have Node.js installed. You can download it from nodejs.org.
+## 4. HTTP Streaming
 
-Run the respective scripts using the commands provided above.
+### Description
 
-Notes
-Ensure that all required files (input.txt, input.json, largeFile.txt) are present in the same directory as the script files.
-Modify file paths in the scripts if your files are located elsewhere.
+Create an HTTP server using the http module that streams a large file to the client upon request instead of loading it into memory all at once.
+
+Files
+task4.js
+Commands
+
+node task4.js
+
+# This will start an HTTP server that streams a large file to the client.
+
+# The server listens on port 3000.
