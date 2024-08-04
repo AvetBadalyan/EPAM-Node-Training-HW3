@@ -37,7 +37,7 @@ Commands
 
 node task2.js
 
-# This will read from input.json, add a timestamp to each JSON object, and write the result to output.json.
+### This will read from input.json, add a timestamp to each JSON object, and write the result to output.json.
 
 ## 3. Implementing Basic Back Pressure
 
@@ -51,7 +51,7 @@ Commands
 
 node task3.js
 
-# This will demonstrate back pressure management by writing data slower than it is read.
+### This will demonstrate back pressure management by writing data slower than it is read.
 
 ## 4. HTTP Streaming
 
@@ -65,6 +65,6 @@ Commands
 
 node task4.js
 
-# This will start an HTTP server that streams a large file to the client.
+### This will start an HTTP server that streams a large file to the client.
 
-# The server listens on port 3000.
+### The server listens on port 3000.
